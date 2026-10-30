@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramblerose's Room - Y2K Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #2b1d17;
+            color: #d7ccc8;
+            font-family: 'Amiri', serif;
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 950px;
+            background: #1c120e;
+            border: 3px solid #5d4037;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+        }
+
+        .site-header {
+            text-align: center;
+            border-bottom: 2px solid #4e342e;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .site-header h1 {
+            color: #d7ccc8;
+            font-size: 2.2rem;
+            margin: 0;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+        }
+
+        .crew-intro-banner {
+            background: #241712;
+            border: 2px solid #4e342e;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: left;
+            direction: ltr;
+            font-family: 'Cinzel', serif;
+        }
+
+        .crew-intro-banner h3 {
+            color: #bcaaa4;
+            font-size: 0.95rem;
+            margin-top: 0;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+            border-bottom: 1px dashed #4e342e;
+            padding-bottom: 8px;
+        }
+
+        .crew-intro-banner p {
+            font-size: 0.88rem;
+            color: #bcaaa4;
+            line-height: 1.7;
+            margin: 0 0 10px 0;
+            font-style: italic;
+        }
+
+        .crew-intro-banner .signature {
+            font-weight: bold;
+            color: #d7ccc8;
+            margin-top: 15px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sidebar {
+            background: #241712;
+            border: 2px solid #4e342e;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .sidebar h3 {
+            margin-top: 0;
+            color: #d7ccc8;
+            font-size: 1.1rem;
+            border-bottom: 1px dashed #4e342e;
+            padding-bottom: 5px;
+            font-family: 'Cinzel', serif;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            margin: 8px 0;
+        }
+
+        .sidebar ul li a {
+            color: #bcaaa4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .sidebar ul li a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .main-content {
+            background: #170d0a;
+            border: 2px solid #4e342e;
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .img-box {
+            border: 2px solid #3e2723;
+            padding: 4px;
+            background: #241712;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .img-box img {
+            width: 100%;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+
+        .inline-gif {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .inline-gif img {
+            max-height: 55px;
+            display: inline-block;
+        }
+
+        .playlist-section {
+            background: #241712;
+            color: #d7ccc8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+            border: 1px solid #4e342e;
+        }
+
+        .playlist-quote {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: #bcaaa4;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #4e342e;
+            padding-bottom: 10px;
+            text-align: left;
+            direction: ltr;
+        }
+
+        .playlist-section select {
+            width: 100%;
+            padding: 8px;
+            background: #170d0a;
+            color: #d7ccc8;
+            border: 1px solid #4e342e;
+            border-radius: 4px;
+            font-family: 'Amiri', serif;
+            margin-bottom: 10px;
+        }
+
+        .playlist-section audio {
+            width: 100%;
+        }
+
+        .library-links {
+            margin-top: 20px;
+            background: #241712;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #4e342e;
+        }
+
+        .btn-link {
+            display: block;
+            background: #3e2723;
+            color: #d7ccc8;
+            text-align: center;
+            padding: 8px;
+            margin: 6px 0;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            border: 1px solid #5d4037;
+        }
+
+        .btn-link:hover {
+            background: #4e342e;
+            color: #ffffff;
+        }
+
+        .guestbook-section {
+            background: #241712;
+            border: 2px solid #4e342e;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- Site Header -->
+        <div class="site-header">
+            <h1>Ramblerose's Room</h1>
+            <p style="margin: 5px 0 0; color: #bcaaa4; font-style: italic; font-family: 'Cinzel', serif;">Archival Gallery & Cassette Room</p>
+        </div>
+
+        <!-- Crew Intro Banner -->
+        <div class="crew-intro-banner">
+            <h3>FROM THE DECK OF THE RAMBLEROSE</h3>
+            <p>
+                To the outside world, and to every distant corner of the sprawling Seven Kingdoms:
+            </p>
+            <p>
+                From the depths of the darkness that precedes the dawn, and aboard the "Ramblerose"—a ship that neither compromises with the wind nor fears the waves—we send you our message. Not as decrees of a tyrant ruler, nor as the orders of a legislator closing doors, but as the sigh of seagulls crossing the seas, witnessing what sleepy eyes behind walls fail to see.
+            </p>
+            <p class="signature">
+                — Remain free, even if it costs you all the waves of the sea.
+            </p>
+        </div>
+
+        <div class="content-grid">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <h3>Sitely</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#books">Library (4 Books)</a></li>
+                    <li><a href="#magazine">Rumble Roses Magazine</a></li>
+                    <li><a href="#music">Cassette Album (10 Tracks)</a></li>
+                    <li><a href="#guestbook">Guestbook</a></li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">Avatar</h3>
+                <div class="img-box" style="margin:0;">
+                    <img src="avatar.jpg" alt="Avatar">
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <h2 style="color: #d7ccc8; margin-top: 0; font-family: 'Cinzel', serif;">Welcome to my digital room</h2>
+                <p style="line-height: 1.6;">
+                    Here is the integrated archive: distributed memories, an antique cassette album, and four valuable books waiting for your voyage.
+                </p>
+
+                <!-- First Inline GIF -->
+                <div class="inline-gif">
+                    <img src="sticker1.gif" alt="Sticker 1">
+                </div>
+
+                <!-- Photo Grid -->
+                <h3 style="color: #bcaaa4; font-size: 1rem; border-bottom: 1px dashed #4e342e; padding-bottom: 5px; font-family: 'Cinzel', serif;">Photo Corners & Memories</h3>
+                <div class="photo-grid">
+                    <div class="img-box"><img src="photo1.jpg" alt="1"></div>
+                    <div class="img-box"><img src="photo2.jpg" alt="2"></div>
+                    <div class="img-box"><img src="photo3.jpg" alt="3"></div>
+                    <div class="img-box"><img src="photo4.jpg" alt="4"></div>
+                    <div class="img-box"><img src="photo5.jpg" alt="5"></div>
+                    <div class="img-box"><img src="photo6.jpg" alt="6"></div>
+                </div>
+
+                <!-- Second Inline GIF -->
+                <div class="inline-gif">
+                    <img src="sticker2.gif" alt="Sticker 2">
+                </div>
+
+                <!-- Cassette Album Section -->
+                <div id="music" class="playlist-section">
+                    <span style="font-weight: bold; display: block; margin-bottom: 8px; font-family: 'Cinzel', serif;">Antique Cassette Album (10 Tracks)</span>
+                    
+                    <div class="playlist-quote">
+                        "I don't choose songs because I like them.<br>
+                        This is how passengers choose.<br>
+                        I test them first: I put them in my ears and watch the compass.<br>
+                        If it starts pointing north, the song is a false one.<br>
+                        And if its hands spin for no reason, I keep it.<br>
+                        Navigation is not knowing where you are.<br>
+                        Navigation is knowing when you shouldn't know.<br>
+                        - Navigation Raheel"
+                    </div>
+
+                    <select onchange="document.getElementById('audioPlayer').src=this.value">
+                        <option value="A Garland Of Breath.mp3">1. A Garland Of Breath</option>
+                        <option value="Ellora.mp3">2. Ellora</option>
+                        <option value="Leyli.mp3">3. Leyli</option>
+                        <option value="Mist Weaving.mp3">4. Mist Weaving</option>
+                        <option value="Roya.mp3">5. Roya</option>
+                        <option value="Svarga.mp3">6. Svarga</option>
+                        <option value="Temple Of The Maiden.mp3">7. Temple Of The Maiden</option>
+                        <option value="The Promise.mp3">8. The Promise</option>
+                        <option value="Varuna.mp3">9. Varuna</option>
+                        <option value="Wajad.mp3">10. Wajad</option>
+                    </select>
+                    <audio id="audioPlayer" controls>
+                        <source src="A Garland Of Breath.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <!-- Library Section -->
+                <div id="books" class="library-links">
+                    <h3 style="margin-top: 0; color: #d7ccc8; font-size: 1rem; font-family: 'Cinzel', serif;">Archival Library (4 Books & Magazine)</h3>
+                    <a href="Rumble Roses Volume 0.pdf" target="_blank" class="btn-link" id="magazine">Rumble Roses Volume 0 (Magazine)</a>
+                    <a href="The-Body-Keeps-the-Score-PDF.pdf" target="_blank" class="btn-link">The Body Keeps the Score</a>
+                    <a href="كتاب-البلهان.pdf" target="_blank" class="btn-link">Kitab Al-Bulhan</a>
+                    <a href="الكاماسوترا.pdf" target="_blank" class="btn-link">Kamasutra</a>
+                    <a href="Hour-of-The-Star-Clarice_Lispector.pdf" target="_blank" class="btn-link">Hour of The Star - Clarice Lispector</a>
+                </div>
+
+                <!-- Guestbook Section -->
+                <div id="guestbook" class="guestbook-section">
+                    <h3 style="margin-top: 0; color: #d7ccc8; font-size: 1rem; font-family: 'Cinzel', serif;">Chat & Guestbook</h3>
+                    <p style="font-size: 0.85rem; margin-bottom: 8px;">Leave a trace here, a kind word, or a memory you pass by...</p>
+                    <div style="background: #170d0a; border: 1px solid #4e342e; padding: 10px; border-radius: 4px; font-size: 0.85rem; color: #bcaaa4;">
+                        <em>"Welcome to every traveler who left a piece of their soul here..."</em>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
